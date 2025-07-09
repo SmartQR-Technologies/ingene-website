@@ -7350,8 +7350,8 @@ p {
 /* Hero section */
 .hero {
   background: var(--dark-bg);
-  min-height: 80vh;
-  height: calc(100vh - 4rem);
+  
+   
   padding-top: 4rem; /* account for navbar height */
   padding-bottom: 4rem;
 }
@@ -7489,102 +7489,15 @@ p {
   padding: 3rem 0;
 }
 
-/* Container to center and constrain width */
-.container {
+/* Constrain width */
+.partners-compliance .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Partner logos row */
-.partner-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
-  margin-bottom: 2.5rem;
-}
 
-.partner-logo {
-  max-height: 40px;
-  opacity: 0.6;
-  transition: opacity 0.2s;
-}
-
-.partner-logo:hover {
-  opacity: 1;
-}
-
-/* Compliance logos row */
-.compliance-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-}
-
-.compliance-logo {
-  max-height: 32px;
-  opacity: 0.4;
-  transition: opacity 0.2s;
-}
-
-.compliance-logo:hover {
-  opacity: 0.7;
-}
-
-/* Responsive tweaks */
-@media (max-width: 576px) {
-  .partner-logos, .compliance-logos {
-    gap: 1.5rem;
-  }
-  .partner-logo {
-    max-height: 32px;
-  }
-  .compliance-logo {
-    max-height: 24px;
-  }
-}
-
-
-.slick-slider div {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-
-.partner-logos img,
-.compliance-logos img {
-  max-height: 40px;
-  opacity: 0.6;
-  transition: opacity .2s;
-}
-
-.partner-logos img:hover,
-.compliance-logos img:hover {
-  opacity: 1;
-}
-
-
-.slick-slider div {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-
-.partner-logos img {
-  max-height: 40px;
-  opacity: 0.6;
-  transition: opacity .2s;
-}
-
-.partner-logos img:hover {
-  opacity: 1;
-}
-
-/* Compliance logos stay static */
+/* ===== Compliance Logos (Static Row) ===== */
 .compliance-logos {
   display: flex;
   justify-content: center;
@@ -7593,14 +7506,92 @@ p {
   margin-top: 2rem;
 }
 
-.compliance-logo {
-  max-height: 32px;
+.compliance-logos img {
+  max-height: 40px;
   opacity: 0.4;
   transition: opacity 0.2s;
 }
-
-.compliance-logo:hover {
+.compliance-logos img:hover {
   opacity: 0.7;
+}
+
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 992px) {
+ 
+  .compliance-logos {
+    gap: 2rem;
+  }
+  .compliance-logos img {
+    max-height: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  
+  .compliance-logos {
+    gap: 1.5rem;
+  }
+  .compliance-logos img {
+    max-height: 24px;
+  }
+}
+ 
+
+
+/* —— Logo Marquee —— */
+.logo-marquee {
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  padding: 1rem 0;
+}
+
+.logo-marquee .slide-track {
+  display: flex;
+  width: calc(200px * 10); /* slide width * total slides (original+duplicate) */
+  animation: scroll-left 20s linear infinite;
+}
+
+.logo-marquee .slide {
+  flex: 0 0 200px;  /* fixed slide width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-marquee .slide img {
+  max-height: 80px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.logo-marquee .slide img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* keyframes: move left by half the track (i.e., width of one full set) */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-200px * 5)); }
+}
+
+/* Adjust sizing on smaller screens */
+@media (max-width: 992px) {
+  .logo-marquee .slide {
+    flex: 0 0 160px;
+  }
+  @keyframes scroll-left {
+    100% { transform: translateX(calc(-160px * 5)); }
+  }
+}
+@media (max-width: 576px) {
+  .logo-marquee .slide {
+    flex: 0 0 120px;
+  }
+  @keyframes scroll-left {
+    100% { transform: translateX(calc(-120px * 5)); }
+  }
 }
 
 
@@ -7668,7 +7659,7 @@ p {
 .card-collapsed {
   background: #008080;
   opacity: 1;
-  visibility: visible;
+  visibility: visible; padding: 50px;
 }
 .card-expanded {
   background: linear-gradient(135deg, #008080, #bcf0da);
@@ -7722,7 +7713,7 @@ p {
   margin: 0 0 0.75rem;
 }
 .card-expanded p {
-  color: var(--text-muted);
+  color: #fff;
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 1rem;
@@ -7805,4 +7796,386 @@ p {
   opacity: 1;
 }
 
+#mainNav {
+  background: var(--color-bg);
+}
 
+.pathways-cards .section-title{
+  color: #fff;
+}
+
+
+.my-gradient1 {
+  background: linear-gradient(to right, #98AED9, #0F2332);
+}
+
+
+.my-gradient2 {
+  background: linear-gradient(to right, #833766, #0F2332);
+}
+
+.my-gradient3 {
+  background: linear-gradient(to right, #C1DEC1, #0F2332);
+}
+
+/* —— Impact & Services Section —— */
+.impact-services {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 4rem 0;
+}
+
+/* Main title (white) */
+.impact-services .impact-title {
+  color: #fff;                  /* ensure pure white */
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Subtitle (muted grey) */
+.impact-services .impact-title .text-muted {
+  display: block;
+  color: var(--text-muted);     /* #A0B0C0 */
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+/* Coral button */
+.impact-services .btn-accent {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s;
+  margin-top: 1rem;
+}
+.impact-services .btn-accent:hover {
+  background: rgba(255,107,92,0.9);
+}
+
+/* Image container with bottom fade */
+.impact-services .impact-image {
+  position: relative;
+  margin-top: 2rem;
+}
+.impact-services .impact-image img {
+  width: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  display: block;
+}
+.impact-services .impact-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to top, var(--bg-dark), transparent);
+  pointer-events: none;
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+/* Layout overrides */
+.impact-services .row {
+  align-items: center;
+}
+@media (max-width: 991.98px) {
+  .impact-services .impact-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .impact-services .btn-accent {
+    display: inline-block;
+    margin: 1rem auto 0;
+  }
+  .impact-services .impact-image {
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+
+
+/* ===== Latest Developments Section ===== */
+/* —— Latest Developments (Styled) —— */
+.latest-developments {
+  background: #fff;
+  padding: 4rem 1rem;
+}
+.latest-developments .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.latest-developments .section-header {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+}
+
+/* 2×2 Grid Layout */
+.dev-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 1.5rem;
+}
+
+/* Base Card Styles */
+.dev-grid .card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Evidence Card (Purple Gradient) */
+.card-evidence {
+  background: linear-gradient(135deg, #8e44ad 0%, #5e3370 100%);
+  color: #fff;
+  padding: 2rem 1.5rem;
+}
+.card-evidence h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color:  #fff;
+}
+.card-evidence .byline {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: auto;
+  color:  #fff;
+}
+.card-evidence .btn-outline {
+  align-self: start;
+  margin-top: 1rem;
+  border-color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.9);
+}
+
+/* News Card (Dark Blue) */
+.card-news {
+  background: var(--bg-dark);
+  color: #fff;
+  padding: 2rem 1.5rem;
+}
+.card-news h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem; color:  #fff;
+}
+.card-news .date {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 1rem;color: #fff;
+}
+.card-news .link-inline {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: auto;
+}
+.card-news .btn-outline {
+  align-self: start;
+  margin-top: 1rem;
+}
+
+/* Widget Card (Static White + Scroll if needed) */
+.card-widget {
+  background: #f7f7f7;
+  color: #333;
+  padding: 1rem;
+}
+.card-widget .widget-placeholder {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Blog Card (Image + Gradient Overlay) */
+.card-blog {
+  position: relative;
+  background: url('assets/images/blog-silicosis.jpg') center/cover no-repeat;
+  color: #fff;
+  display: flex;
+   
+  padding: 2rem;
+}
+.card-blog::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11,30,51,0.8), transparent);
+}
+.card-blog h3,
+.card-blog p,
+.card-blog .btn-outline {
+  position: relative; /* lift above overlay */
+}
+.card-blog h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.card-blog .stat {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+.card-blog .btn-outline {
+  align-self: flex-start;
+}
+
+/* Outline Button (White border on dark, dark border on light) */
+.latest-developments .btn-outline {
+  border: 2px solid currentColor;
+  background: transparent;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.card-evidence .btn-outline:hover,
+.card-news .btn-outline:hover {
+  background: rgba(255,255,255,0.2);
+}
+.card-blog .btn-outline:hover,
+.card-widget .btn-outline:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+/* Responsive Stacking */
+@media (max-width: 992px) {
+  .dev-grid {
+    grid-template-columns: 1fr;
+  }
+  .card-evidence, .card-news, .card-widget, .card-blog {
+    padding: 1.5rem;
+  }
+}
+
+/* ==== 2×2 Grid with 8/4 on row 1, then 8/4 reversed on row 2 ==== */
+.dev-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;             /* column 1 = 8/12, column 2 = 4/12 */
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "evidence news"  /* row 1: evidence (8) | news (4) */
+    "blog     widget";/* row 2: blog (8)     | widget (4) */
+  gap: 1.5rem;
+}
+
+/* Assign each card to the proper area */
+.card-evidence { grid-area: evidence; }
+.card-news     { grid-area: news; }
+.card-blog     { grid-area: blog; }
+.card-widget   { grid-area: widget; }
+
+/* Collapse to single column on narrow screens */
+@media (max-width: 992px) {
+  .dev-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "evidence"
+      "news"
+      "blog"
+      "widget";
+  }
+}
+
+
+
+
+/* —— Testimonial Slider Section —— */
+.testimonials-slider {
+  background: #F3F4F6;
+  padding: 4rem 1rem;
+}
+.testimonials-slider .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.testimonials-slider .testimonials-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Slick slides: dim non-center slides */
+.testimonial-carousel .slick-slide {
+  opacity: 0.5;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+  padding: 3rem;
+}
+.testimonial-carousel .slick-center {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Testimonial item */
+.testimonial-item {
+  background: transparent;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonial-item blockquote {
+  font-size: 1rem;
+  color: rgb(131, 55, 102);
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  position: relative;
+}
+.testimonial-item blockquote:before,
+.testimonial-item blockquote:after {
+  font-family: serif;
+  font-size: 2.5rem;
+  color: var(--accent);
+  position: absolute;
+}
+.testimonial-item blockquote:before {
+  content: "“";
+  top: -20px;  
+  transform: translateX(-50%);
+}
+.testimonial-item blockquote:after {
+  content: "”";
+  bottom: -26px;  
+  transform: translateX(50%);
+}
+
+/* Author styling */
+.testimonial-author {
+  margin-top: auto;
+}
+.testimonial-author strong {
+  display: block;
+  color: #333;
+  font-size: 1rem;
+}
+.testimonial-author span {
+  color: #777;
+  font-size: 0.875rem;
+}
+ 
+/* Responsive: show 1 slide on small */
+@media (max-width: 768px) {
+  .testimonial-carousel .slick-slide {
+    padding: 0 0.5rem;
+  }
+}
