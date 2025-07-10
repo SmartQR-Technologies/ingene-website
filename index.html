@@ -75,9 +75,101 @@
 </nav>
  
 </header>
+<style>
+  .hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh; /* or whatever height you prefer */
+}
+
+.hero-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.hero .inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.content {
+  color: #fff; /* ensure text is visible */
+  max-width: 50%;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.metrics {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+</style>
+
+<section class="hero">
+  <video class="hero-bg" src="assets/images/home_video1.mp4" autoplay muted loop playsinline></video>
+  <div class="inner">
+    <!-- Copy + Metrics -->
+    <div class="content">
+      <h1>Empowering Precision Diagnostics with AI-Driven Mini DNA Labs</h1>
+      <a href="#" class="cta">Explore INGENE</a>
+
+      <!-- ★ Metrics Block ★ -->
+      <div class="metrics">
+        <div class="metric">
+          <h2 class="metric-value">12+</h2>
+          <p class="metric-label">Specialties Supported</p>
+        </div>
+        <div class="metric">
+          <h2 class="metric-value">&lt;3</h2>
+          <p class="metric-label">Hour Turnaround</p>
+        </div>
+        <div class="metric">
+          <h2 class="metric-value">8+</h2>
+          <p class="metric-label">Scientific Publications</p>
+        </div>
+        <div class="metric">
+          <h2 class="metric-value">6+</h2>
+          <p class="metric-label">Patents</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Hero Section -->
-<section class="hero">
+<section class="hero" style="display: none;">
   <div class="inner">
     <!-- Copy + Metrics -->
     <div class="content">
@@ -107,10 +199,10 @@
 
     <!-- Video -->
     <div class="media">
-      <video
+      <a target="_blank" href="https://www.youtube.com/@SmartQRTechnologies"><video
         src="assets/images/home_video1.mp4"
         autoplay muted loop playsinline
-      ></video>
+      ></video></a>
     </div>
   </div>
 </section>
@@ -228,7 +320,7 @@
         </h3>
         <a href="#" class="btn btn-accent mt-3">Explore Our Impact</a>
         <div class="impact-image mt-4">
-          <img src="assets/images/impact1.webp" alt="Global Impact of AI" class="img-fluid rounded-3 shadow-lg">
+          <img src="assets/images/product1.png" alt="Global Impact of AI" class="img-fluid rounded-3 shadow-lg">
         </div>
       </div>
 
@@ -240,7 +332,7 @@
         </h3>
         <a href="#" class="btn btn-accent mt-3">Explore Our Services</a>
         <div class="impact-image mt-4">
-          <img src="assets/images/impact1.webp" alt="Client Services" class="img-fluid rounded-3 shadow-lg">
+          <img src="assets/images/team_icmr.jpg" alt="Client Services" class="img-fluid rounded-3 shadow-lg">
         </div>
       </div>
 
@@ -462,13 +554,13 @@ $(function(){
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     speed: 1000,
     cssEase: 'linear',
     infinite: true,
     arrows: false,
     dots: false,         // turn off pagination
-    pauseOnHover: true,
+    pauseOnHover: false,
     responsive: [
       { breakpoint: 992, settings: { slidesToShow: 1 } }
     ]

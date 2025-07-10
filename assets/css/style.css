@@ -7466,7 +7466,13 @@ p {
 /* on very large screens, go even bigger */
 @media (min-width: 1200px) {
   .hero .content h1 {
-    font-size: 4rem;
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hero .content h1 {
+    font-size: 2rem;
   }
 }
 
@@ -7478,7 +7484,7 @@ p {
 /* slightly larger on tablets+ */
 @media (min-width: 576px) {
   .metrics .metric-value {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 
@@ -8149,7 +8155,7 @@ p {
   position: absolute;
 }
 .testimonial-item blockquote:before {
-  content: "“";
+  content: "“"; display: none;
   top: -20px;  
   transform: translateX(-50%);
 }
