@@ -7947,7 +7947,9 @@ p {
 
 /* Evidence Card (Purple Gradient) */
 .card-evidence {
-  background: linear-gradient(135deg, #8e44ad 0%, #5e3370 100%);
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), /* semi-dark overlay */
+    url('../images/heart_Bg.jpg') no-repeat center/cover;
   color: #fff;
   padding: 2rem 1.5rem;
 }
@@ -8012,7 +8014,7 @@ p {
 /* Blog Card (Image + Gradient Overlay) */
 .card-blog {
   position: relative;
-  background: url('assets/images/blog-silicosis.jpg') center/cover no-repeat;
+  background: url('../images/dna_bg.jpg') center/cover no-repeat;
   color: #fff;
   display: flex;
    
@@ -8031,12 +8033,14 @@ p {
 }
 .card-blog h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; color: #fff;
 }
-.card-blog .stat {
-  font-size: 1rem;
-  opacity: 0.9;
-  margin-bottom: 1rem;
+.card-blog .stat { 
+
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: auto;
+  color: #fff;
 }
 .card-blog .btn-outline {
   align-self: flex-start;
@@ -8056,6 +8060,10 @@ p {
 .card-evidence .btn-outline:hover,
 .card-news .btn-outline:hover {
   background: rgba(255,255,255,0.2);
+}
+
+.card-news   {
+  background: url('../images/brain_bg.jpg') center/cover no-repeat;
 }
 .card-blog .btn-outline:hover,
 .card-widget .btn-outline:hover {
