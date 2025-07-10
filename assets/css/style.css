@@ -7474,6 +7474,10 @@ p {
   .hero .content h1 {
     font-size: 2rem;
   }
+
+  #mainNav {
+  background: var(--color-bg);
+}
 }
 
 /* —— Increase Metric Numbers —— */
@@ -7802,9 +7806,7 @@ p {
   opacity: 1;
 }
 
-#mainNav {
-  background: var(--color-bg);
-}
+
 
 .pathways-cards .section-title{
   color: #fff;
@@ -8131,6 +8133,7 @@ p {
       "widget";
   }
 }
+
 
 
 
