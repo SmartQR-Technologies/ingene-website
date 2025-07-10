@@ -8002,7 +8002,11 @@ p {
 
 .card-widget {
   position: relative;
-  background: url('../images/blog_bg.jpg') center/cover no-repeat;
+  background: linear-gradient(
+    to right,
+    #0066cc 0%,     /* blue start */
+    #004080 100%    /* deeper blue end */
+  );
   color: #fff;
   display: flex;
    
@@ -8088,7 +8092,11 @@ p {
 }
 
 .card-news   {
-  background: url('../images/brain_bg.jpg') center/cover no-repeat;
+  background: linear-gradient(
+    to right,
+    #6a0dad 0%,    /* deep purple */
+    #d147a3 100%   /* magenta-ish pink */
+  );
 }
 .card-blog .btn-outline:hover,
 .card-widget .btn-outline:hover {
