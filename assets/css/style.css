@@ -7922,9 +7922,9 @@ p {
 /* Section Header */
 .latest-developments .section-header {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   font-weight: 500;
-  color: var(--accent);
+  color: #000;
   margin-bottom: 2.5rem;
 }
 
@@ -7997,19 +7997,42 @@ p {
 }
 
 /* Widget Card (Static White + Scroll if needed) */
+
 .card-widget {
-  background: #f7f7f7;
-  color: #333;
-  padding: 1rem;
+  position: relative;
+  background: url('../images/blog_bg.jpg') center/cover no-repeat;
+  color: #fff;
+  display: flex;
+   
+  padding: 2rem;
 }
-.card-widget .widget-placeholder {
-  flex: 1;
-  overflow-y: auto;
-  padding: 0.5rem;
-  background: #fff;
-  border-radius: 0.5rem;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+.card-widget::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11,30,51,0.8), transparent);
 }
+.card-widget h3,
+.card-widget p,
+.card-widget .btn-outline {
+  position: relative; /* lift above overlay */
+}
+.card-widget h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem; color: #fff;
+}
+.card-widget .stat { 
+
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: auto;
+  color: #fff;
+}
+.card-widget .btn-outline {
+  align-self: flex-start;
+}
+
+ 
 
 /* Blog Card (Image + Gradient Overlay) */
 .card-blog {
