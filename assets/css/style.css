@@ -7350,8 +7350,6 @@ p {
 /* Hero section */
 .hero {
   background: var(--dark-bg);
-  
-   
   padding-top: 4rem; /* account for navbar height */
   padding-bottom: 4rem;
 }
@@ -7466,7 +7464,7 @@ p {
 /* on very large screens, go even bigger */
 @media (min-width: 1200px) {
   .hero .content h1 {
-    font-size: 3rem;
+    font-size: 46px;
   }
 }
 
@@ -7478,6 +7476,18 @@ p {
   #mainNav {
   background: var(--color-bg);
 }
+
+.content {
+  color: #fff; /* ensure text is visible */
+  max-width: 100%;
+}
+
+
+.content2 {
+  color: #fff; /* ensure text is visible */
+  max-width: 100%;
+}
+
 }
 
 /* —— Increase Metric Numbers —— */
@@ -8262,7 +8272,13 @@ p {
 
 .content {
   color: #fff; /* ensure text is visible */
-  max-width: 50%;
+  max-width: 60%;
+}
+
+
+.content2 {
+  color: #fff; /* ensure text is visible */
+  max-width: 40%;
 }
 
 .cta {
@@ -8375,4 +8391,85 @@ p {
     max-width: none;
     width: 100%;
   }
+}
+
+.header_text {
+  color: #fff;
+  margin: 25px 0;
+}
+
+.about
+{
+  background:#161916;color:#ffffff;padding:4rem;box-sizing:border-box;text-align:center;
+}
+.about h2, .team h2{
+  font-size: 60px;
+    line-height: 60px;font-weight:700;margin-bottom:1.5rem;
+    color: #fff;
+} 
+
+.about p{
+font-size:clamp(1rem,2.6vw,1.125rem);line-height:1.6;margin-bottom:1.25rem;opacity:0.95;
+color: #fff;
+}
+
+.team {
+  background:#161916;padding:4rem 2rem;box-sizing:border-box;text-align: center;
+}
+
+.team_div {
+  max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;
+}
+
+.team_card {
+  background:#1b1b1b;border-radius:12px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.4);display:flex;flex-direction:column;
+}
+
+.team_card img {
+  width:100%;height:200px;object-fit:cover;
+}
+.team_card p {
+font-size:1rem;line-height:1.5;color:#fff;margin:0;}
+
+
+
+.content_team h4{
+  font-size: 24px;
+  padding-top: 18px;
+  color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero .content h1 {
+    font-size: 24px;
+  }
+
+  #mainNav {
+  background: var(--color-bg);
+}
+
+.header_text
+{
+    font-size: 24px;
+}
+.content {
+  color: #fff; /* ensure text is visible */
+  max-width: 100%;
+}
+
+.content2 {
+  color: #fff; /* ensure text is visible */
+  max-width: 100%;
+}
+
+section p { text-align: left; }
+
+.about h2, .team h2{
+  font-size: 40px;
+    line-height: 40px;font-weight:700;margin-bottom:1.5rem;
+} 
+
+
+.about{
+  padding: 2rem;
 }
