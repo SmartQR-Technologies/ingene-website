@@ -8270,11 +8270,7 @@ p {
   height: 100%;
 }
 
-.content {
-  color: #fff; /* ensure text is visible */
-  max-width: 60%;
-}
-
+ 
 
 .content2 {
   color: #fff; /* ensure text is visible */
@@ -8342,8 +8338,7 @@ p {
 
 /* Individual card */
 .end2end__card {
-  background: var(--card-bg);
-  border: 1px solid rgba(255,255,255,0.1);
+   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 0.75rem;
   padding: 2rem 1.5rem;
   flex: 1 1 300px;
@@ -8647,8 +8642,7 @@ section p { text-align: left; }
   width:30px;
   height:30px;
   display:block;
-  filter: invert(35%) sepia(21%) saturate(1427%) hue-rotate(140deg) brightness(90%) contrast(90%);
-  /* If your SVGs already colored, remove the filter above */
+   /* If your SVGs already colored, remove the filter above */
 }
 
 /* label */
@@ -8675,7 +8669,7 @@ section p { text-align: left; }
 
 .tests__item:hover{
   background:#2a2a2a;
-  border-color:#3b82f6; /* blue glow */
+  border-color:#FF6B5C; /* blue glow */
   transform:translateY(-3px);
 }
 .tests__label{
@@ -8716,12 +8710,12 @@ section p { text-align: left; }
 
 .affil-grid{
   display:grid; gap:18px;
-  grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+  grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
 }
 
 /* Card */
 .affil-card{
-  background:var(--affil-card);
+  background:#fff;
   border:1px solid var(--affil-border);
   border-radius:var(--radius);
   display:flex; align-items:center; justify-content:center;
@@ -8734,8 +8728,7 @@ section p { text-align: left; }
   transform:translateY(-3px);
   border-color:#2bb3c8;
   box-shadow:0 10px 26px rgba(0,0,0,.35);
-  background:#1a2220;
-}
+ }
 
 /* Logo — no gray filter now */
 .affil-logo{
@@ -8752,11 +8745,188 @@ section p { text-align: left; }
 
 @media (max-width:600px){
   #affiliations{ padding:48px 16px; }
-  .affil-grid{ gap:14px; }
+  .affil-grid{ gap:14px;  grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); }
   .affil-card{ min-height:96px; }
+  
   .affil-logo{ max-width:140px; max-height:56px; }
 }
 @media (prefers-reduced-motion:reduce){
   .affil-card,.affil-logo{ transition:none; }
 }
 
+
+
+.infetech-team-area::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  background-image: url(../images/service-line.png);
+  height: 470px;
+  width: 370px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* ====== News & Press (matches dark theme) ====== */
+:root{
+  /* reuse same palette feel as Affiliations/tests sections */
+  --news-bg:#0f1413;
+  --news-title:#f2f6f5;
+  --news-card:#161c1b;
+  --news-border:#24302e;
+  --news-ring:#2bb3c8;
+  --news-text:#dfe7e5;
+  --news-muted:#9fb5b1;
+  --radius:14px;
+}
+
+.infetech-blog-area{
+  background:var(--news-bg);
+  padding-block:64px;
+}
+
+.infetech-blog-area .title{
+  color:var(--news-title);
+  text-align:center;
+  font-weight:800;
+  letter-spacing:.02em;
+  margin:0 0 28px;
+  font-size:clamp(1.5rem,1.1rem + 2vw,2.25rem);
+}
+
+/* Grid: rely on your Bootstrap cols, but ensure gaps are consistent */
+.infetech-blog-area .row{ row-gap:22px; }
+
+/* Card */
+.single-blog-item{
+  background:var(--news-card);
+  border:1px solid var(--news-border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Image wrapper with fixed aspect ratio */
+.single-blog-item .thumb{
+  position:relative;
+  aspect-ratio:16/9;      /* keeps consistent heights */
+  overflow:hidden;
+}
+
+.single-blog-item .thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:grayscale(30%) contrast(1.05) brightness(.98);
+  transform:scale(1.003);
+  transition:transform .25s ease, filter .25s ease;
+}
+
+/* Content */
+.single-blog-item .content{
+  padding:18px 18px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  flex:1;
+}
+
+.single-blog-item .blog-meta .title{
+  margin:0 0 6px;
+  font-size:1.05rem;
+  line-height:1.35;
+  font-weight:750;
+}
+
+.single-blog-item .blog-meta .title a{
+  color:var(--news-text);
+  text-decoration:none;
+}
+
+.single-blog-item .blog-meta .title a:hover,
+.single-blog-item .blog-meta .title a:focus{
+  color:#ffffff;
+  outline:none;
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:3px;
+}
+
+.single-blog-item .blog-meta a{
+  color:var(--news-ring);
+  font-weight:600;
+  text-decoration:none;
+}
+
+.single-blog-item .blog-meta a:hover,
+.single-blog-item .blog-meta a:focus{
+  text-decoration:underline;
+  outline:none;
+}
+
+/* Hover + focus ring */
+.single-blog-item:hover,
+.single-blog-item:focus-within{
+  transform:translateY(-4px);
+  background:#1a2220;
+  border-color:var(--news-ring);
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+.single-blog-item:hover .thumb img,
+.single-blog-item:focus-within .thumb img{
+  filter:none;
+  transform:scale(1.06);
+}
+
+/* Utility spacers from your markup (optional) */
+.space-100{ height:0; } /* we control section padding via CSS above */
+
+/* ====== Responsive ====== */
+@media (max-width: 991px){ /* tablets & small laptops */
+  .infetech-blog-area{ padding-block:56px; }
+}
+
+@media (max-width: 767px){ /* mobile */
+  .infetech-blog-area{ padding-block:44px; }
+  .single-blog-item .content{ padding:16px; }
+  .single-blog-item .blog-meta .title{ font-size:1rem; }
+}
+
+/* Respect motion preferences */
+@media (prefers-reduced-motion:reduce){
+  .single-blog-item,
+  .single-blog-item .thumb img{ transition:none; }
+}
+
+
+.single-blog-item .content .blog-meta .title a {
+  font-size: 17px;
+  color: #1d1729;
+  margin-top: 10px;
+}
+
+
+.single-blog-item:hover{
+  border-color: #FF6B5C;
+}
+
+.single-blog-item:hover .content .blog-meta > a {
+  background: #FF6B5C;
+}
+.single-blog-item:hover .content .blog-meta .title a {
+  color: #FF6B5C; text-decoration: none;
+}
+
+.single-blog-item .content {
+  margin-right:0px;
+  margin-left: 0px;
+}
