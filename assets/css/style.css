@@ -8451,8 +8451,13 @@ font-size:1rem;line-height:1.5;color:#fff;margin:0;}
   padding-top: 18px;
   color: #fff;
 }
+ 
 
 @media only screen and (max-width: 600px) {
+
+  .about div {
+  padding: 10px;
+}
   .hero .content h1 {
     font-size: 24px;
   }
@@ -8710,69 +8715,66 @@ section p { text-align: left; }
   .tests__icon-wrap{ width:52px; height:52px; min-width:52px; }
   .tests__icon{ width:28px; height:28px; }
 }
-
-/* ===== Affiliations (visible logos) ===== */
 :root{
   --affil-bg:#0f1413;
   --affil-title:#f2f6f5;
-  --affil-card:#161c1b;         /* slightly lighter than before */
-  --affil-border:#24302e;
-  --affil-ring:#2bb3c8;
   --radius:14px;
 }
 
 #affiliations{
   background:var(--affil-bg);
   padding:64px 20px;
+  overflow:hidden; /* hide extra */
 }
 
 .affil-wrap{ max-width:1200px; margin:0 auto; }
- 
+.affil-title{ color:var(--affil-title); margin-bottom:24px; }
 
-.affil-grid{
-  display:grid; gap:18px;
-  grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+/* Slider container */
+.affil-slider{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+}
+
+/* Track (scroll animation) */
+.affil-track{
+  display:flex;
+  gap:28px;
+  animation:scroll-left 10s linear infinite;
 }
 
 /* Card */
 .affil-card{
+  flex:0 0 auto;
   background:#fff;
-  border:1px solid var(--affil-border);
   border-radius:var(--radius);
-  display:flex; align-items:center; justify-content:center;
-  min-height:112px;
-  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
-  box-shadow:0 6px 18px rgba(0,0,0,.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:180px;
+  min-height:100px;
+  padding:10px 20px;
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
 }
-.affil-card:hover,
-.affil-card:focus-within{
-  transform:translateY(-3px);
-  border-color:#2bb3c8;
-  box-shadow:0 10px 26px rgba(0,0,0,.35);
- }
 
-/* Logo — no gray filter now */
+/* Logo */
 .affil-logo{
-  max-width:170px; max-height:70px;
-  width:auto; height:auto; object-fit:contain;
-  opacity:.98;                      /* near full opacity */
-  filter:none;                      /* <— critical change */
-  transition:transform .18s ease, filter .18s ease, opacity .18s ease;
+  max-width:140px;
+  max-height:60px;
+  object-fit:contain;
 }
-.affil-card:hover .affil-logo{ transform:scale(1.03); filter:drop-shadow(0 1px 0 rgba(0,0,0,.1)); }
 
-/* Optional helper: slightly boost very dark logos */
-.affil-logo--boost { filter:brightness(1.25) contrast(1.1); }
-
-@media (max-width:600px){
-  #affiliations{ padding:48px 16px; }
-  .affil-grid{ gap:14px;  grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); }
-  .affil-card{ min-height:96px; }
-  
-  .affil-logo{ max-width:140px; max-height:56px; }
+/* Infinite scroll keyframes */
+@keyframes scroll-left{
+  0%   { transform:translateX(0); }
+  100% { transform:translateX(-50%); }
 }
-@media (prefers-reduced-motion:reduce){
-  .affil-card,.affil-logo{ transition:none; }
+
+/* Responsive */
+@media(max-width:600px){
+  .affil-card{ min-width:140px; min-height:80px; padding:8px 12px; }
+  .affil-logo{ max-width:100px; max-height:50px; }
 }
 
 
@@ -9174,5 +9176,3 @@ section p { text-align: left; }
   @media (max-width:599px){
     .arrow{width:32px}
   }
-
-  
